@@ -42,7 +42,7 @@ GIT_TOKEN = getenv(
         "utf-8"
     ),
 )
-GROUP = getenv("GROUP", "shicyyC0d")
+GROUP = getenv("GROUP", "ShicyyXCode")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 PMPERMIT_PIC = getenv("PMPERMIT_PIC", None)
