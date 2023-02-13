@@ -1,3 +1,4 @@
+
 import time
 import traceback
 from sys import version as pyver
@@ -98,7 +99,7 @@ async def ping_function(message: Message, answers):
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Support", url="t.me/shicyyC0de")]]
+                [[InlineKeyboardButton("Support", url="t.me/ShicyyXCode)]]
             ),
         )
     )
@@ -122,7 +123,7 @@ async def chiy_function(message: Message, answers):
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="💢sᴜᴘᴘᴏʀᴛ💢", url="t.me/shicyyC0de"), InlineKeyboardButton(text="💢ᴏᴡɴᴇʀ💢", url="t.me/PakkPoll")], [InlineKeyboardButton(text="💢ᴍᴇɴᴜ💢", callback_data="reopen")]]
+                [[InlineKeyboardButton(text="💢sᴜᴘᴘᴏʀᴛ💢", url="t.me/ShicyyXCode"), InlineKeyboardButton(text="💢ᴏᴡɴᴇʀ💢", url="t.me/PakkPoll")], [InlineKeyboardButton(text="💢ᴍᴇɴᴜ💢", callback_data="reopen")]]
             ),
         )
     )
