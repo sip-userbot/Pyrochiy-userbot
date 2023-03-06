@@ -37,7 +37,7 @@ async def set_chat_photo(client: Client, message: Message):
     can_change_admin = zuzu.can_change_info
     can_change_member = message.chat.permissions.can_change_info
     if not (can_change_admin or can_change_member):
-        await message.edit_text("You don't have enough permission")
+        await message.edit_text("kamu bukan admin disini sayang makanya gabisa")
     if message.reply_to_message:
         if message.reply_to_message.photo:
             await client.set_chat_photo(
@@ -45,7 +45,7 @@ async def set_chat_photo(client: Client, message: Message):
             )
             return
     else:
-        await message.edit_text("Reply to a photo to set it !")
+        await message.edit_text("lo reply dulu dong tsay poto nya baru bisa di setel")
 
 
 @Client.on_message(
@@ -57,15 +57,15 @@ async def member_ban(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await Man.edit("I don't have enough permissions")
+        return await Man.edit("kenapa gua gapunya izin disini memek !!")
     if not user_id:
-        return await Man.edit("I can't find that user.")
+        return await Man.edit("jamet tidak terdeteksi")
     if user_id == client.me.id:
-        return await Man.edit("I can't ban myself.")
+        return await Man.edit("lo bego apa tolol? yah mana bisa senyapkan diri sendiri bodoh")
     if user_id in DEVS:
-        return await Man.edit("I can't ban my developer!")
+        return await Man.edit("yang waras dikit napa lo gabisa ngapa ngapain developer lo !!")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await Man.edit("I can't ban an admin, You know the rules, so do i.")
+        return await Man.edit("gua mana bisa ngelarang admin,gua disini gada hak,lo tau aturan nya tar yang ada lo kena ban memek")
     try:
         mention = (await client.get_users(user_id)).mention
     except IndexError:
@@ -298,24 +298,24 @@ async def demote(client: Client, message: Message):
 add_command_help(
     "admin",
     [
-        [f"{cmd}ban <reply/username/userid> <alasan>", "Membanned member dari grup."],
+        [f"{cmd}ban <reply/username/userid> <alasan>", "Membanned jamet dari group."],
         [
             f"{cmd}unban <reply/username/userid> <alasan>",
-            "Membuka banned member dari grup.",
+            "Membuka banned jamet dari grup.",
         ],
-        [f"{cmd}kick <reply/username/userid>", "Mengeluarkan pengguna dari grup."],
+        [f"{cmd}kick <reply/username/userid>", "Mengeluarkan jamet dari semua grup tele."],
         [
             f"{cmd}promote atau {cmd}fullpromote",
-            "Mempromosikan member sebagai admin atau cofounder.",
+            "Mempromosikan member ga gunavsebagai admin atau cofounder.",
         ],
-        [f"{cmd}demote", "Menurunkan admin sebagai member."],
+        [f"{cmd}demote", "Menurunkan admin tolol sebagai member."],
         [
             f"{cmd}mute <reply/username/userid>",
-            "Membisukan member dari Grup.",
+            "Membisukan member dongo dari Grup.",
         ],
         [
             f"{cmd}unmute <reply/username/userid>",
-            "Membuka mute member dari Grup.",
+            "Membuka mute member autis yang freak dari Grup.",
         ],
         [
             f"{cmd}pin <reply>",
