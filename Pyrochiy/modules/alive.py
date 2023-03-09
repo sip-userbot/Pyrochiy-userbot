@@ -39,7 +39,7 @@ emoji = gvarstatus("ALIVE_EMOJI") or "『★』"
 alive_text = gvarstatus("ALIVE_TEKS_CUSTOM") or "⚡𝘗𝘙𝘌𝘔𝘐𝘜𝘔⚡"
 
 
-@Client.on_message(filters.command(["alive", "awake"], cmd) & filters.me)
+@Client.on_message(filters.command(["alive", "chiy"], cmd) & filters.me)
 async def alive(client: Client, message: Message):
     xx = await edit_or_reply(message, "👑")
     await asyncio.sleep(2)
