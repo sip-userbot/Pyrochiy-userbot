@@ -51,8 +51,9 @@ async def module_help(client: Client, message: Message):
                 message.chat.id, nice.query_id, nice.results[0].id
             ),
         )
-
-
+    except BaseException as e:
+        print(f"{e}")
+      
 @Client.on_message(filters.command(["alive", "chiy"], cmd) & filters.me)
 async def alive(client: Client, message: Message):
     xx = await edit_or_reply(message, "👑")
