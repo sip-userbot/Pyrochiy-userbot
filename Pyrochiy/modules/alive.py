@@ -21,7 +21,7 @@ from telegraph import exceptions, upload_file
 from config import BOT_VER, CHANNEL
 from config import CMD_HANDLER as cmd
 from config import GROUP
-from Pyrochiy import CMD_HELP, StartTime
+from Pyrochiy import CMD_HELP, StartTime, app
 from Pyrochiy.helpers.basic import edit_or_reply
 from Pyrochiy.helpers.PyroHelpers import ReplyCheck
 from Pyrochiy.helpers.SQL.globals import gvarstatus
@@ -37,6 +37,20 @@ alive_logo = (
 )
 emoji = gvarstatus("ALIVE_EMOJI") or "『★』"
 alive_text = gvarstatus("ALIVE_TEKS_CUSTOM") or "⚡𝘗𝘙𝘌𝘔𝘐𝘜𝘔⚡"
+
+
+
+@Client.on_message(filters.command(["ialive", "ialvi"], cmd) & filters.me)
+async def module_help(client: Client, message: Message):
+    bot_username = (await app.get_me()).username
+    try:
+        nice = await client.get_inline_bot_results(bot=bot_username, query="alive")
+        await asyncio.gather(
+            message.delete(),
+            client.send_inline_bot_result(
+                message.chat.id, nice.query_id, nice.results[0].id
+            ),
+        )
 
 
 @Client.on_message(filters.command(["alive", "chiy"], cmd) & filters.me)
